@@ -30,15 +30,19 @@ else
     echo "Volume already has notes, skipping copy"
 fi
 
-# Activate virtual environment
-source $VOLUME_PATH/venv/bin/activate
-echo "Virtual environment activated"
+function start(){
+    # Activate virtual environment
+    source $VOLUME_PATH/venv/bin/activate
+    echo "Virtual environment activated"
 
 
-if [[ $JUPYTER_PASSWORD ]]
-then
-    cd /
-    jupyter lab --allow-root --no-browser --port=8888 --ip=* --ServerApp.terminado_settings='{"shell_command":["/bin/bash"]}' --ServerApp.token=$JUPYTER_PASSWORD --ServerApp.allow_origin=* --ServerApp.preferred_dir=/workspace
-else
-    sleep infinity
-fi
+    if [[ $JUPYTER_PASSWORD ]]
+    then
+        cd /
+        jupyter lab --allow-root --no-browser --port=8888 --ip=* --ServerApp.terminado_settings='{"shell_command":["/bin/bash"]}' --ServerApp.token=$JUPYTER_PASSWORD --ServerApp.allow_origin=* --ServerApp.preferred_dir=/workspace
+    else
+        sleep infinity
+    fi
+}
+
+start 2>&1
