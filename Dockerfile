@@ -2,8 +2,6 @@ FROM runpod/pytorch:2.1.1-py3.10-cuda12.1.1-devel-ubuntu22.04
 
 WORKDIR /opt
 
-RUN pip install runpod
-
 # pytorch to 2.5.1
 RUN pip install torch==2.5.1
 
@@ -19,12 +17,6 @@ RUN git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe.g
 # Install requirements
 RUN pip install -r /opt/diffusion-pipe/requirements.txt
 
-# Install Jupyter
-RUN python3 -m pip install jupyter notebook
+COPY start.sh /opt/start.sh
 
-COPY run.sh /opt/run.sh
-
-COPY notes /opt/notes
-
-CMD ["sh", "/opt/run.sh"]
-
+CMD ["sh", "/opt/start.sh"]
