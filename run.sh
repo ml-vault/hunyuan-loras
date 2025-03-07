@@ -19,6 +19,3 @@ fi
 
 # Activate virtual environment
 source $VOLUME_PATH/venv/bin/activate
-
-# Run pod
-runpod
