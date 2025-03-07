@@ -2,6 +2,14 @@
 
 echo "pod started"
 
+# Activate virtual environment
+
+# Check if the activation command is already in .bashrc
+if ! grep -q "source $VOLUME_PATH/venv/bin/activate" ~/.bashrc; then
+    echo "source $VOLUME_PATH/venv/bin/activate" >> ~/.bashrc
+fi
+echo "Virtual environment activated"
+
 if [[ $PUBLIC_KEY ]]
 then
     mkdir -p ~/.ssh
@@ -31,9 +39,6 @@ else
 fi
 
 function start(){
-    # Activate virtual environment
-    source $VOLUME_PATH/venv/bin/activate
-    echo "Virtual environment activated"
 
 
     if [[ $JUPYTER_PASSWORD ]]
