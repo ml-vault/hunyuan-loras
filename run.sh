@@ -17,5 +17,9 @@ else
     echo "Volume already has notes, skipping copy"
 fi
 
+
 # Activate virtual environment
 source $VOLUME_PATH/venv/bin/activate
+
+# Run Jupyter in background
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=$VOLUME_PATH/notes &
