@@ -78,7 +78,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: build
           build-args: |
             PYTHON_VERSION=${{ matrix.build.python }}
             PYTORCH_VERSION=${{ matrix.build.pytorch }}
