@@ -20,4 +20,4 @@ RUN pip install -r /opt/diffusion-pipe/requirements.txt
 WORKDIR /workspace
 COPY run.sh /workspace/run.sh
 
-CMD ["/workspace/run.sh"]
+CMD ["bash", "/workspace/run.sh"]
