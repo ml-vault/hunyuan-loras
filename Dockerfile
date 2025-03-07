@@ -18,6 +18,6 @@ RUN git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe.g
 RUN pip install -r /opt/diffusion-pipe/requirements.txt
 
 WORKDIR /workspace
-COPY start.sh /workspace/start.sh
+COPY run.sh /workspace/run.sh
 
-CMD ["/workspace/start.sh"]
+CMD ["/workspace/run.sh"]
