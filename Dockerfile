@@ -20,10 +20,11 @@ RUN git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe.g
 RUN pip install -r /opt/diffusion-pipe/requirements.txt
 
 # Install Jupyter
-RUN python3 -m pip install jupyter
+RUN python3 -m pip install jupyter notebook
 
 COPY run.sh /opt/run.sh
 
 COPY notes /opt/notes
 
 CMD ["sh", "/opt/run.sh"]
+
