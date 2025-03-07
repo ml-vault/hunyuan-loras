@@ -24,4 +24,6 @@ RUN python3 -m pip install jupyter
 
 COPY run.sh /opt/run.sh
 
+COPY notes /opt/notes
+
 CMD ["sh", "/opt/run.sh"]
