@@ -19,6 +19,8 @@ fi
 
 # Activate virtual environment
 sh $VOLUME_PATH/venv/bin/activate
+echo "Virtual environment activated"
 
 # Run Jupyter in background
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=$VOLUME_PATH/notes &
+echo "Jupyter notebook started"
