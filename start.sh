@@ -31,7 +31,7 @@ else
 fi
 
 # Activate virtual environment
-sh $VOLUME_PATH/venv/bin/activate
+source $VOLUME_PATH/venv/bin/activate
 echo "Virtual environment activated"
 
 
