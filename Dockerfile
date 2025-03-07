@@ -1,24 +1,12 @@
 FROM runpod/pytorch:2.1.1-py3.10-cuda12.1.1-devel-ubuntu22.04
 
-WORKDIR /opt
-
-# pytorch to 2.5.1
-RUN pip install torch==2.5.1
-
-# Generate python virtual environment
-RUN python3 -m venv /opt/venv
-
-# Activate virtual environment
-RUN source /opt/venv/bin/activate
-
-# Install diffusion-pipe
-RUN git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe.git /opt/diffusion-pipe
-
-# Install requirements
-RUN pip install -r /opt/diffusion-pipe/requirements.txt
+ENV PYTHON_PATH=/opt/venv/bin/python3
+ENV INFINITE_IMAGE_BROWSING_PYTHON_PATH=/opt/infinite-image-browsing-venv/bin/python3
 
 WORKDIR /workspace
-COPY run.sh /opt/run.sh
+COPY *.sh /opt/
+RUN chmod +x /opt/*.sh
+COPY requirements.txt /opt/
+RUN /opt/install.sh
 
-RUN chmod +x /opt/run.sh
 CMD ["/opt/run.sh"]
