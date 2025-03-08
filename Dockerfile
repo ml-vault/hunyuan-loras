@@ -6,6 +6,7 @@ ENV INFINITE_IMAGE_BROWSING_VENV_PATH=/opt/infinite-image-browsing-venv
 ENV INFINITE_IMAGE_BROWSING_PYTHON_PATH=/opt/infinite-image-browsing-venv/bin/python3
 
 WORKDIR /workspace
+COPY notes /opt/notes/
 COPY *.sh /opt/
 RUN chmod +x /opt/*.sh
 COPY requirements.txt /opt/
