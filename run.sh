@@ -60,7 +60,7 @@ function start(){
 
 function start_infinite_image_browsing(){
     cd /
-    $INFINITE_IMAGE_BROWSING_PYTHON_PATH -m uvicorn --host 0.0.0.0 --port 7888 /opt/ai-dock/infinite-browser/app
+    $INFINITE_IMAGE_BROWSING_PYTHON_PATH /opt/ai-dock/infinite-browser/app.py --host 0.0.0.0 --port 7888
     echo "Infinite image browsing started"
 }
 

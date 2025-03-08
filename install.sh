@@ -10,7 +10,7 @@ function prepare_venv() {
 function install_packages(){
     # Install diffusion-pipe
     git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe.git /opt/diffusion-pipe
-    git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git /opt/infinite-image-browsing
+    git clone https://github.com/ml-vault/sd-webui-infinite-image-browsing /opt/infinite-image-browsing
 }
 
 function install_dependencies() {
