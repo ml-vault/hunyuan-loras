@@ -2,9 +2,9 @@
 
 function prepare_venv() {
     # Generate python virtual environment for diffusion-pipe
-    python3 -m venv $PYTHON_PATH
+    python3 -m venv $PYTHON_VENV_PATH
     # Generate python virtual environment for infinite-image-browsing
-    python3 -m venv $INFINITE_IMAGE_BROWSING_PYTHON_PATH
+    python3 -m venv $INFINITE_IMAGE_BROWSING_VENV_PATH
 }
 
 function install_packages(){
