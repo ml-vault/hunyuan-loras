@@ -64,6 +64,11 @@ function start_infinite_image_browsing(){
     echo "Infinite image browsing started"
 }
 
+function start_file_browser(){
+    cd /
+    filebrowser --port 7788 --address 0.0.0.0 -r /workspace -d /workspace/filebrowser.db
+    echo "File browser started"
+}
 
 #==============================================
 # Run
@@ -73,3 +78,4 @@ setup_venv
 setup_notes
 start 2>&1
 start_infinite_image_browsing 2>&1
+start_file_browser 2>&1
